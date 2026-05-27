@@ -5,64 +5,105 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(cors());
+// ======================
+// MIDDLEWARE
+// ======================
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 app.use(express.json());
 
+// ======================
+// TEST ROUTES
+// ======================
+
+app.get("/", (req, res) => {
+  res.send("Portfolio Backend Running Successfully 🚀");
+});
+
+app.get("/contact", (req, res) => {
+  res.send("Contact API Working ✅");
+});
+
+// ======================
+// CONTACT ROUTE
+// ======================
+
 app.post("/contact", async (req, res) => {
-
   try {
-
     const { name, email, message } = req.body;
 
-    const transporter = nodemailer.createTransport({
+    // Validation
+    if (!name || !email || !message) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+    }
 
+    // Transporter
+    const transporter = nodemailer.createTransport({
       service: "gmail",
 
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-
     });
 
+    // Send Mail
     await transporter.sendMail({
-
-      from: email,
+      from: process.env.EMAIL_USER,
 
       to: process.env.EMAIL_USER,
 
-      subject: `Portfolio Message from ${name}`,
+      replyTo: email,
+
+      subject: `New Portfolio Message from ${name}`,
 
       html: `
-        <h2>New Portfolio Message</h2>
+        <div style="font-family: Arial; padding: 20px;">
+          <h2>New Portfolio Contact Message</h2>
 
-        <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Name:</strong> ${name}</p>
 
-        <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Email:</strong> ${email}</p>
 
-        <p><strong>Message:</strong> ${message}</p>
+          <p><strong>Message:</strong></p>
+
+          <div style="background:#f5f5f5;padding:15px;border-radius:10px;">
+            ${message}
+          </div>
+        </div>
       `,
-
     });
 
+    // Success Response
     res.status(200).json({
       success: true,
-      message: "Message Sent Successfully",
+      message: "Message Sent Successfully ✅",
     });
-
   } catch (error) {
-
-    console.log(error);
+    console.log("EMAIL ERROR:", error);
 
     res.status(500).json({
       success: false,
-      message: "Something went wrong",
+      message: "Failed to send message",
+      error: error.message,
     });
-
   }
-
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server Running on port ${process.env.PORT}`);
+// ======================
+// PORT
+// ======================
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server Running on Port ${PORT}`);
 });
