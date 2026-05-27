@@ -25,7 +25,7 @@ function Contact() {
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/contact",
+        "https://portfolio-backend-5gjp.onrender.com/contact",
         form
       );
 
