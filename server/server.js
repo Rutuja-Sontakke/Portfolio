@@ -85,17 +85,21 @@ app.post("/contact", async (req, res) => {
     // Success Response
     res.status(200).json({
       success: true,
-      message: "Message Sent Successfully ✅",
+      message: "Message Sent Successfully",
     });
   } catch (error) {
-    console.log("EMAIL ERROR:", error);
 
-    res.status(500).json({
-      success: false,
-      message: "Failed to send message",
-      error: error.message,
-    });
-  }
+  console.log("CONTACT ERROR:", error);
+
+  console.log(error.response?.data);
+
+  alert(
+    JSON.stringify(
+      error.response?.data || error.message
+    )
+  );
+
+}
 });
 
 // ======================

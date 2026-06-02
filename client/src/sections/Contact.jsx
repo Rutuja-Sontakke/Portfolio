@@ -39,9 +39,15 @@ function Contact() {
 
     } catch (error) {
 
-      alert("Failed to send message");
+  console.log(error);
 
-    }
+  alert(
+    error?.response?.data?.message ||
+    error?.response?.data?.error ||
+    "Failed to send message"
+  );
+
+}
 
   };
 
