@@ -59,22 +59,29 @@ function Hero() {
         </p>
 
         <div
-            className="
-            flex
-            flex-col
-            sm:flex-row
-            gap-4
-            mt-8
-            justify-center
-            md:justify-start
-          "
-          >
+  className="
+  flex
+  flex-row
+  gap-4
+  mt-8
+  justify-center
+  md:justify-start
+"
+>
 
   {/* Hire Me Button */}
 
   <a href="#contact">
 
-    <button className="bg-purple-600 px-6 py-3 rounded-xl hover:scale-105 transition">
+    <button className="
+bg-purple-600
+w-36
+sm:w-40
+py-3
+rounded-xl
+hover:scale-105
+transition
+">
 
       Hire Me
 
@@ -89,7 +96,16 @@ function Hero() {
     download
   >
 
-    <button className="border border-purple-500 px-6 py-3 rounded-xl hover:bg-purple-500 transition">
+    <button className="
+border
+border-purple-500
+w-36
+sm:w-40
+py-3
+rounded-xl
+hover:bg-purple-500
+transition
+">
 
       Download CV
 
