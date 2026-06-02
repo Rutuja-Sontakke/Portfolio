@@ -91,13 +91,10 @@ app.post("/contact", async (req, res) => {
 
   console.log("CONTACT ERROR:", error);
 
-  console.log(error.response?.data);
-
-  alert(
-    JSON.stringify(
-      error.response?.data || error.message
-    )
-  );
+  return res.status(500).json({
+    success: false,
+    message: error.message,
+  });
 
 }
 });
