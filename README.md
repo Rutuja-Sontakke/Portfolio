@@ -1,18 +1,14 @@
-# 🚀 Rutuja's Developer Portfolio
+# Rutuja's Developer Portfolio
 
 A modern and responsive Full Stack Developer Portfolio built using React.js to showcase my professional experience, technical skills, and projects.
 
-## 🌐 Live Demo
+## Live Demo
 
-Frontend (Vercel):
-https://your-vercel-link.vercel.app
-
-Backend (Render):
-https://your-render-link.onrender.com
+https://portfolio-git-main-rutuja-s-projects2.vercel.app/
 
 ---
 
-## 📋 About The Project
+##  About The Project
 
 This portfolio website was designed and developed to showcase my journey as a Full Stack Developer.
 
@@ -28,7 +24,7 @@ The design focuses on clean UI, responsiveness, and smooth user experience.
 
 ---
 
-## ✨ Features
+##  Features
 
 ### Home Section
 - Professional introduction
@@ -80,7 +76,7 @@ The design focuses on clean UI, responsiveness, and smooth user experience.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 - ReactJS
@@ -105,7 +101,7 @@ The design focuses on clean UI, responsiveness, and smooth user experience.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 portfolio/
 │
 ├── public/
