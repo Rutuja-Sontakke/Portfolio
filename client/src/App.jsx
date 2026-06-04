@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Skills from "./sections/Skills";
@@ -24,7 +25,8 @@ function App() {
       <Projects />
 
       <Contact />
-
+      
+      <Footer />
     </div>
   );
 }
