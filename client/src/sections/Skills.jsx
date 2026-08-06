@@ -1,7 +1,15 @@
-import { FaReact, FaNodeJs, FaPhp, FaDatabase } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaPhp, FaDatabase, FaHtml5, FaCss3 } from "react-icons/fa";
 import { SiMongodb, SiJavascript, SiExpress } from "react-icons/si";
 
 const skills = [
+  {
+    name: "HTML5",
+    icon: <FaHtml5 size={40} />,
+  },
+  {
+    name: "CSS3",
+    icon: <FaCss3 size={40} />,
+  },
   {
     name: "ReactJS",
     icon: <FaReact size={40} />,
