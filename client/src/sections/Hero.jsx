@@ -1,8 +1,10 @@
-import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowRight } from 'react-icons/fa';
-import { TypeAnimation } from 'react-type-animation';
-import profileImg from "../assets/images/Rutuja-Pic.png";
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowRight } from 'react-icons/fa'
+import { TypeAnimation } from 'react-type-animation'
+import profileImg from "../assets/images/Rutuja-Pic.png"
+import resumeFile from '../assets/resume/RutujaS_CV1.pdf'
+
 
 const Hero = () => {
   const scrollToSection = (id) => {
@@ -476,22 +478,22 @@ const Hero = () => {
               </motion.button>
 
               <motion.a
-                href="#"
-                download
-                className="px-8 py-4 bg-[#2C2C2C] text-white rounded-full font-semibold hover:bg-[#1A1A1A] transition-all duration-300 flex items-center gap-2 group"
-                style={{
-                  transform: 'translateZ(0px)',
-                }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -5,
-                  boxShadow: '0 10px 30px rgba(44, 44, 44, 0.3)',
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <FaDownload className="group-hover:translate-y-1 transition-transform" />
-                <span>Resume</span>
-              </motion.a>
+  href={resumeFile}
+  download="Rutuja_Sontakke_Resume.pdf"
+  className="px-8 py-4 bg-[#2C2C2C] text-white rounded-full font-semibold hover:bg-[#1A1A1A] transition-all duration-300 flex items-center gap-2 group"
+  style={{
+    transform: 'translateZ(0px)',
+  }}
+  whileHover={{ 
+    scale: 1.05, 
+    y: -5,
+    boxShadow: '0 10px 30px rgba(44, 44, 44, 0.3)',
+  }}
+  whileTap={{ scale: 0.95 }}
+>
+  <FaDownload className="group-hover:translate-y-1 transition-transform" />
+  <span>Resume</span>
+</motion.a>
             </motion.div>
           </motion.div>
         </div>
