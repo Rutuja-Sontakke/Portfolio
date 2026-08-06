@@ -1,4 +1,3 @@
-
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowRight } from 'react-icons/fa'
