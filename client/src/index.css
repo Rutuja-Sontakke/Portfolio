@@ -1,29 +1,136 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
+@theme {
+  /* Custom Color Palette - Warm & Professional */
+  --color-cream-50: #FFFEF9;
+  --color-cream-100: #FFF8DC;
+  --color-cream-200: #FAEBD7;
+  --color-cream-300: #F5F5DC;
+  --color-cream-400: #F0E68C;
+  --color-cream-500: #E6D5AC;
+  
+  --color-gold-100: #FFF9E6;
+  --color-gold-200: #FFEAA7;
+  --color-gold-300: #D4AF37;
+  --color-gold-400: #CD7F32;
+  --color-gold-500: #B8860B;
+  
+  --color-rose-gold-100: #F4E4E7;
+  --color-rose-gold-200: #E5C6CC;
+  --color-rose-gold-300: #D4A5AE;
+  --color-rose-gold-400: #B76E79;
+  --color-rose-gold-500: #9B5563;
+  
+  --color-warm-white: #FAF9F6;
+  --color-warm-grey-100: #F5F5F5;
+  --color-warm-grey-200: #E8E8E8;
+  --color-warm-grey-300: #D3D3D3;
+  
+  --color-charcoal: #2C2C2C;
+  --color-warm-black: #1A1A1A;
+  
+  /* Custom Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Cormorant Garamond', serif;
 }
 
-body{
-  background:#050816;
-  color:white;
-  overflow-x:hidden;
-  font-family:sans-serif;
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.gradient-text{
-  background:linear-gradient(to right,#915EFF,#00CEA8);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+/* Custom Scrollbar - Warm Theme */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.glass{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  backdrop-filter:blur(10px);
+::-webkit-scrollbar-track {
+  background: var(--color-cream-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-gold-300), var(--color-gold-400));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-500);
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-warm-white);
+  overflow-x: hidden;
+}
+
+/* Gradient Text Utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-gold-300), var(--color-rose-gold-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass Morphism */
+.glass {
+  background: rgba(250, 249, 246, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  background-size: 1000px 100%;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--color-gold-300);
+  color: var(--color-warm-white);
+}
+
+/* Focus Styles */
+*:focus {
+  outline: 2px solid var(--color-gold-300);
+  outline-offset: 2px;
+}
+
+/* Loading Animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
