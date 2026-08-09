@@ -151,32 +151,6 @@ portfolio/
 
 ---
 
-## 🚀 Quick Start
-
-```bash
-# Clone repository
-git clone https://github.com/Rutuja-Sontakke/portfolio.git
-
-# Install dependencies
-npm install
-
-# Create .env file
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
----
-
 ## 🎯 Customization
 
 ### **Update Content**
